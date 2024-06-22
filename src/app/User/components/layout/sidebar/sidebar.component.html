@@ -1,0 +1,23 @@
+<div class="d-flex flex-row justify-content-center mt-3">
+    <img src="../../../../../assets/img/mantenimiento.png" alt="" width="50%">
+</div>
+<hr>
+<ul class="list-group">
+    <li routerLink="home" 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="list-group-item">
+        Menú Principal
+    </li>
+    <li routerLink="dashboard" 
+        routerLinkActive="active" 
+        class="list-group-item">
+        Dashboard
+    </li>
+    <li routerLink="maintenance" 
+        routerLinkActive="active" 
+        class="list-group-item">
+        Mantenimiento a clientes
+    </li>
+    <button class="btn btn-danger mt-5" (click)="logout()">Cerrar Sesión</button>
+</ul>

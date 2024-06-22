@@ -1,1 +1,32 @@
-<p>maintenance works!</p>
+<h3 class="text-center m-4">Mantenimientos a Usuarios</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">idUsuario</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Mail</th>
+        <th scope="col">Status</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Identificación</th>
+        <th scope="col">Fecha Nacimiento</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of resultados">
+        <td>{{ data.idUsuario }}</td>
+        <td>{{ data.username }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.status }}</td>
+        <td>{{ data.persona.nombres }}</td>
+        <td>{{ data.persona.apellidos }}</td>
+        <td>{{ data.persona.identificacion }}</td>
+        <td>{{ data.persona.fechanacimiento }}</td>
+        <td>
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger">Elim</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

@@ -27,11 +27,10 @@ export class LoginComponent {
   login() {
     const user = this.formLogin.value.userOrEmail;
     const pass = this.formLogin.value.password;
-
-    this.serviceLogin.loguearUsuario(user.trimStart().trimEnd(), pass.trimStart().trimEnd()).subscribe(
+    this.serviceLogin.LoguearUsuario(user.trimStart().trimEnd(), pass.trimStart().trimEnd()).subscribe(
       (response: Login) => {
         if (response.success) { // Ajusta según la estructura de tu respuesta
-          this.router.navigate(['/home']);
+          this.router.navigate(['/user/home']);
         } else {
           this.displayMessage(response.message);
         }

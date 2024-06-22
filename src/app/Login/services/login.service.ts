@@ -12,14 +12,14 @@ export class LoginService {
 
   constructor( private http: HttpClient ) { }
 
-  loguearUsuario(username_email: string, password: string): Observable<Login> {
+  LoguearUsuario(username_email: string, password: string): Observable<Login> {
     const url = `${this.apiUrl}/login-user`;
 
     // Crear los parámetros de la solicitud
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = { u_username_mail: username_email, u_password: password };
 
-    // Enviar la solicitud GET con los parámetros
+    // Enviar la solicitud POST con los parámetros
     return this.http.post<Login>(url, body, { headers }).pipe(
       map((response: Login) => {
         if (response.success) {

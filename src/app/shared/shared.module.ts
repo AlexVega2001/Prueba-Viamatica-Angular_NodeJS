@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginModule } from '../Login/login.module';
-import { UserModule } from '../User/user.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,8 +8,10 @@ import { UserModule } from '../User/user.module';
   declarations: [],
   imports: [
     CommonModule,
-    LoginModule,
-    UserModule
+    ReactiveFormsModule
+  ],
+  exports: [
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

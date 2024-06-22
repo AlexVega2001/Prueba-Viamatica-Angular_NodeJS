@@ -7,24 +7,22 @@ import { MaintenanceComponent } from './User/pages/maintenance/maintenance.compo
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-  },
-  {
-    path: 'maintenance',
-    component: MaintenanceComponent,
+    path: 'user',
+    loadChildren: () => import('./User/user.module').then(u => u.UserModule)
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'login',
+    pathMatch: 'full'
   }
 ];
 
