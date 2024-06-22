@@ -1,0 +1,35 @@
+<div class="login-container">
+    <h2 class="text-center">Login</h2>
+    <div class="d-flex flex-row justify-content-center my-4">
+        <img src="../../../../assets/img/user.png" alt="" width="50%">
+    </div>
+    <form [formGroup]="formLogin" (ngSubmit)="login()">
+      <div>
+        <label for="usernameOrEmail" class="form-label">Username or Email</label>
+        <input type="text" class="form-control" id="usernameOrEmail" formControlName="userOrEmail" autocomplete="off">
+      </div>
+      <div>
+        <label for="password" class="form-label">Password</label>
+        <div class="password-container">
+          <input [type]="showPassword ? 'text' : 'password'" 
+                class="form-control" 
+                id="password" 
+                formControlName="password" 
+                autocomplete="off">
+          <button type="button" (click)="toggleShowPassword()">
+            <!-- {{ showPassword ? 'Hide' : 'Show' }} -->
+            <i [ngClass]="showPassword ? 'bi bi-eye-fill' : 'bi bi-eye-slash-fill'"></i>
+          </button>
+        </div>
+      </div>
+      <button type="submit" [disabled]="formLogin.invalid" class="btn btn-primary w-100">Login</button>
+    </form>
+    <div class="d-flex flex-row gap-2 mt-3">
+      <p>¿Has olvidado tu contraseña?</p> 
+      <a href="#">Da clic Aquí!</a>
+    </div>
+    <div *ngIf="showAlert" class="alert alert-danger alert-floating" role="alert">
+      {{ ResponseMessage }}
+    </div>
+  </div>
+  
